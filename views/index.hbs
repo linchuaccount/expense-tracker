@@ -1,4 +1,4 @@
-<div class="row" style="max-width: 700px;">
+<div class="row d-flex justify-content-center" style="min-width: 960px;">
   <div class="col-md-6 order-md-2 mb-4">
 
     <div class="row mt-3 d-flex justify-content-between">
@@ -21,29 +21,33 @@
     </div>
 
     {{#each records}}
-    <div class="row justify-content-center border border-dark mb-1">
-      <div class="col-2 category-img">
-        <span style="font-size: 2.5em; color: rgb(245, 139, 120);">
+    <div class="row border border-dark mb-1">
+      <div class="col-2 category-img mx-auto">
+        <span style="font-size: 2.5em; color: rgb(196, 196, 196);">
           <i class="fas {{this.icon}}"></i>
         </span>
       </div>
-      <div class="col-6">
-        <h6 class="my-0 mt-2">
+      <div class="col-4">
+        <h5 class="my-0 mt-2">
           {{this.name}}
-        </h6>
+        </h5>
         <small class="text-muted mt-2">
           {{this.date}}
         </small>
       </div>
-      <div class="col-2 amount">
+      <div class="col-2 amount my-auto">
         <h4 class="mt-2">
           ${{this.amount}}
         </h4>
       </div>
+      <div class="col-auto button-group my-auto">
+        <a href="./records/{{ this._id }}/edit" class="btn btn-light mr-2">修改</a>
+        <a href="./records/{{ this._id }}/delet" class="btn btn-outline-danger">刪除</a>
+      </div>
     </div>
     {{/each}}
 
-    <div class="row justify-content-center mt-4">
+    <div class="row justify-content-center mt-4 mx-auto">
       <a href="./records/new" class="btn btn-warning">新增記帳</a>
     </div>
   </div>

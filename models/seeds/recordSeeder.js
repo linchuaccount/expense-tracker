@@ -15,4 +15,7 @@ db.once('open', () => {
     Record.create(item)
   })
   console.log('done!')
+  
+  //關閉db
+  .then(() => db.close())
 })
