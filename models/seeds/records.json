@@ -1,0 +1,30 @@
+[
+  {
+    "name": "早餐",
+    "category": "餐飲食品",
+    "date": "2020-01-01",
+    "amount": "55",
+    "icon": "fa-utensils"
+  },
+  {
+    "name": "搭火車",
+    "category": "交通出行",
+    "date": "2020-02-02",
+    "amount": "150",
+    "icon": "fa-shuttle-van"
+  },
+  {
+    "name": "看電影",
+    "category": "休閒娛樂",
+    "date": "2020-03-03",
+    "amount": "300",
+    "icon": "fa-grin-beam"
+  },
+  {
+    "name": "買衛生紙",
+    "category": "家居物業",
+    "date": "2020-04-04",
+    "amount": "100",
+    "icon": "fa-home"
+  }
+]

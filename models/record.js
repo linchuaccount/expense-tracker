@@ -16,6 +16,10 @@ const recordSchema = new Schema({
   amount: {
     type: String,
     required: true
+  },
+  icon: {
+    type: String,
+    required: true
   }
 })
 module.exports = mongoose.model('Record', recordSchema)
