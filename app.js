@@ -67,7 +67,14 @@ app.post('/records/:id/edit', (req, res) => {
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
-
+//刪除記帳資料
+app.post('/records/:id/delete', (req, res) => {
+  const id = req.params.id
+  return Record.findById(id)
+  .then(record => record.remove())
+  .then(() => res.redirect('/'))
+  .catch(error => console.log(error))
+})
 
 // handlebars 自定義 helper; Built-in Helpers => Sub-Expressions
 //參考同學做法 客製ifEqual
