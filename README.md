@@ -2,7 +2,7 @@
 
 簡單好操作的的記帳小幫手，無論是老爸、老媽都可以輕鬆使用
 
-![image]()
+![image](https://github.com/linchuaccount/expense-tracker/blob/master/expense-tracker.png)
 
 ## 功能 Features
 
