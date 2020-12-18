@@ -28,9 +28,13 @@ app.use(express.static('public'))
 
 //記帳首頁(瀏覽所有記帳)
 app.get('/', (req, res) => {
+  let totalAmount = 0
   Record.find()
     .lean()
-    .then(records => res.render('index', { records }))
+    .then(records => {
+      { records.forEach(record => totalAmount += Number(record.amount)) }
+      res.render('index', { records, totalAmount })
+    })
     .catch(error => console.error(error))
 })
 
@@ -90,12 +94,16 @@ handlebars.registerHelper('ifEqual', function (category, targetCategory, options
 //類型選單
 app.get('/type/:category', (req, res) => {
   const category = req.params.category
+  let totalAmount = 0
   Record.find()
     .lean()
     .then(records => records.filter(record => {
       return record.category.includes(category)
     }))
-    .then(records => res.render('index', { records }))
+    .then(records => {
+      { records.forEach(record => totalAmount += Number(record.amount)) }
+      res.render('index', { records, totalAmount })
+    })
     .catch(error => console.log(error))
 })
 
