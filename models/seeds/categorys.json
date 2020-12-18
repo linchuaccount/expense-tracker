@@ -1,0 +1,72 @@
+[
+  {
+    "name": "火鍋",
+    "category": "餐飲食品",
+    "date": "2020-10-01",
+    "amount": "480",
+    "icon": "fa-utensils"
+  },
+  {
+    "name": "麥當勞",
+    "category": "餐飲食品",
+    "date": "2020-05-21",
+    "amount": "155",
+    "icon": "fa-utensils"
+  },
+  {
+    "name": "高鐵",
+    "category": "交通出行",
+    "date": "2020-07-15",
+    "amount": "550",
+    "icon": "fa-shuttle-van"
+  },
+  {
+    "name": "Uber",
+    "category": "交通出行",
+    "date": "2020-04-15",
+    "amount": "300",
+    "icon": "fa-shuttle-van"
+  },
+  {
+    "name": "買遊戲",
+    "category": "休閒娛樂",
+    "date": "2020-08-01",
+    "amount": "1500",
+    "icon": "fa-grin-beam"
+  },
+  {
+    "name": "Switch",
+    "category": "休閒娛樂",
+    "date": "2020-12-31",
+    "amount": "9999",
+    "icon": "fa-grin-beam"
+  },
+  {
+    "name": "泡麵",
+    "category": "家居物業",
+    "date": "2020-12-04",
+    "amount": "200",
+    "icon": "fa-home"
+  },
+  {
+    "name": "蛋",
+    "category": "家居物業",
+    "date": "2020-09-05",
+    "amount": "100",
+    "icon": "fa-home"
+  },
+  {
+    "name": "保險",
+    "category": "其他",
+    "date": "2020-03-15",
+    "amount": "1000",
+    "icon": "fa-pen"
+  },
+  {
+    "name": "捐款",
+    "category": "其他",
+    "date": "2020-12-25",
+    "amount": "800",
+    "icon": "fa-pen"
+  }
+]

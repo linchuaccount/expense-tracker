@@ -5,7 +5,7 @@ function getIcon(category) {
       return 'fa-home'
       break
     case '交通出行':
-      return 'fa-grin-beam'
+      return 'fa-shuttle-van'
       break
     case '休閒娛樂':
       return 'fa-grin-beam'

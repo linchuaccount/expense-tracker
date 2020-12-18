@@ -1,25 +1,33 @@
 <div class="row d-flex justify-content-center" style="min-width: 960px;">
   <div class="col-md-6 order-md-2 mb-4">
-
-    <div class="row mt-3 d-flex justify-content-between">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-muted">支出清單</span>
+    {{!-- 支出總金額 --}}
+    <div class="row">
+      <h3>總金額</h3>
+      <div class="amount">
+        <h1> $
+        </h1>
+      </div>
+    </div>
+    {{!-- 記帳小標題和分類下拉式清單 --}}
+    <div class="row mt-3 d-flex justify-content-between mb-2">
+      <h4 class="text-muted my-auto">
+        支出清單
       </h4>
-      <div class="dropdown col-md-4 order-md-2 mb-4 col-6">
-        <button class="btn btn-light dropdown-toggle btn-lg" type="button" id="dropdownMenu2" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          分類
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <button class="dropdown-item" type="button">家居物業</button>
-          <button class="dropdown-item" type="button">交通出行</button>
-          <button class="dropdown-item" type="button">休閒娛樂</button>
-          <button class="dropdown-item" type="button">餐飲食品</button>
-          <button class="dropdown-item" type="button">其他</button>
-        </div>
+      <button class="btn btn-light dropdown-toggle btn-lg" type="button" id="dropdownMenu2" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        分類
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <a href="/type/家居物業" class="dropdown-item">家居物業</a>
+        <a href="/type/交通出行" class="dropdown-item">交通出行</a>
+        <a href="/type/休閒娛樂" class="dropdown-item">休閒娛樂</a>
+        <a href="/type/餐飲食品" class="dropdown-item">餐飲食品</a>
+        <a href="/type/其他" class="dropdown-item">其他</a>
+        <a href="/" class="dropdown-item">預設</a>
       </div>
     </div>
 
+    {{!-- 記帳列表 --}}
     {{#each records}}
     <div class="row border border-dark mb-1">
       <div class="col-2 category-img mx-auto">
@@ -41,16 +49,16 @@
         </h4>
       </div>
       <div class="col-auto button-group my-auto">
-        <a href="./records/{{ this._id }}/edit" class="btn btn-light mr-2">修改</a>
-        <form action="./records/{{ this._id }}/delete" method="POST" style="display:inline">
+        <a href="/records/{{ this._id }}/edit" class="btn btn-light mr-2">修改</a>
+        <form action="/records/{{ this._id }}/delete" method="POST" style="display:inline">
           <button type="submit" class="btn btn-outline-danger">刪除</button>
         </form>
       </div>
     </div>
     {{/each}}
-
+    {{!-- 新增記帳按鈕 --}}
     <div class="row justify-content-center mt-4 mx-auto">
-      <a href="./records/new" class="btn btn-warning">新增記帳</a>
+      <a href="/records/new" class="btn btn-warning">新增記帳</a>
     </div>
   </div>
 </div>

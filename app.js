@@ -29,9 +29,9 @@ app.use(express.static('public'))
 //記帳首頁(瀏覽所有記帳)
 app.get('/', (req, res) => {
   Record.find()
-  .lean()
-  .then( records => res.render('index', { records }))
-  .catch(error => console.error(error))
+    .lean()
+    .then(records => res.render('index', { records }))
+    .catch(error => console.error(error))
 })
 
 //進入新增記帳頁
@@ -42,13 +42,13 @@ app.get('/records/new', (req, res) => {
 app.post('/records', (req, res) => {
   req.body.icon = getIcon(req.body.category)
   // console.log(req.body)
-  Record.create( req.body )
+  Record.create(req.body)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
 
 //進入記帳修改頁
-app.get('/records/:id/edit', (req,res) => {
+app.get('/records/:id/edit', (req, res) => {
   const id = req.params.id
   return Record.findById(id)
     .lean()
@@ -71,12 +71,12 @@ app.post('/records/:id/edit', (req, res) => {
 app.post('/records/:id/delete', (req, res) => {
   const id = req.params.id
   return Record.findById(id)
-  .then(record => record.remove())
-  .then(() => res.redirect('/'))
-  .catch(error => console.log(error))
+    .then(record => record.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
 })
 
-// handlebars 自定義 helper; Built-in Helpers => Sub-Expressions
+// handlebars 自定義 helper,關鍵字Built-in Helpers => Sub-Expressions
 //參考同學做法 客製ifEqual
 //options.fn(this) 回傳 {{ifEqual}} 後面的字串
 // 客製 equal helper
@@ -85,6 +85,18 @@ handlebars.registerHelper('ifEqual', function (category, targetCategory, options
     return options.fn(this)
   }
   return options.inverse(this)
+})
+
+//類型選單
+app.get('/type/:category', (req, res) => {
+  const category = req.params.category
+  Record.find()
+    .lean()
+    .then(records => records.filter(record => {
+      return record.category.includes(category)
+    }))
+    .then(records => res.render('index', { records }))
+    .catch(error => console.log(error))
 })
 
 app.listen(3000, () => {
