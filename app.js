@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const handlebars = require('handlebars')
 const Record = require('./models/record')
 const getIcon = require('./public/javascripts/geticon.js')
+const methodOverride = require('method-override')
 
 const app = express()
 
@@ -25,6 +26,7 @@ app.set('view engine', 'hbs')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
+app.use(methodOverride('_method'))
 
 //記帳首頁(瀏覽所有記帳)
 app.get('/', (req, res) => {
@@ -60,7 +62,7 @@ app.get('/records/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 //接住修改頁的資料後送進MongoDB儲存
-app.post('/records/:id/edit', (req, res) => {
+app.put('/records/:id', (req, res) => {
   const id = req.params.id
   req.body.icon = getIcon(req.body.category)
   return Record.findById(id)
@@ -72,7 +74,7 @@ app.post('/records/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 //刪除記帳資料
-app.post('/records/:id/delete', (req, res) => {
+app.delete('/records/:id', (req, res) => {
   const id = req.params.id
   return Record.findById(id)
     .then(record => record.remove())

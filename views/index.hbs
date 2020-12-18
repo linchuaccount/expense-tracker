@@ -52,7 +52,7 @@
       </div>
       <div class="col-auto button-group my-auto">
         <a href="/records/{{ this._id }}/edit" class="btn btn-light mr-2">修改</a>
-        <form action="/records/{{ this._id }}/delete" method="POST" style="display:inline">
+        <form action="/records/{{ this._id }}?_method=DELETE" method="POST" style="display:inline">
           <button type="submit" class="btn btn-outline-danger">刪除</button>
         </form>
       </div>

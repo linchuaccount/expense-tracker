@@ -4,7 +4,7 @@
       <span class="badge badge-pill badge-warning"> 必填欄位 * </span>
     </div>
 
-    <form action="/records/{{ record._id }}/edit" method="POST">
+    <form action="/records/{{ record._id }}?_method=PUT" method="POST">
       {{!-- 名稱 --}}
       <div class="input-group mt-3 mb-3">
         <div class="input-group-prepend">
