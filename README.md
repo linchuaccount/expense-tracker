@@ -24,7 +24,11 @@ body-parser v1.19.0
 method-override v3.0.0  
 nodemom
 
-## 記帳小幫手安裝與執行方法
+## Heroku URL
+
+`https://secure-lake-82803.herokuapp.com/`
+
+## 記帳小幫手本地電腦安裝與執行方法
 
 在終端機輸入以下指令:
 
