@@ -10,21 +10,21 @@
           <span class="input-group-text" id="inputGroup-sizing-default">名稱 *</span>
         </div>
         <input type="text" placeholder="請輸入支出名稱" name="name" class="form-control" aria-label="Sizing example input"
-          aria-describedby="inputGroup-sizing-default">
+          aria-describedby="inputGroup-sizing-default" required>
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-default">日期 *</span>
         </div>
-        <input type="date" name="date">
+        <input type="date" name="date" required>
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">類別 *</label>
         </div>
-        <select class="custom-select" name="category" id="inputGroupSelect01">
+        <select class="custom-select" name="category" id="inputGroupSelect01" required>
           <option value="家居物業">家居物業</option>
           <option value="交通出行">交通出行</option>
           <option value="休閒娛樂">休閒娛樂</option>
@@ -37,7 +37,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-default">金額 *</span>
         </div>
-        <input type="number" placeholder="請輸入支出金額" name="amount" class="form-control" id="length" min="0">
+        <input type="number" placeholder="請輸入支出金額" name="amount" class="form-control" id="length" min="0" required>
       </div>
       <div class="button-group d-flex justify-content-center mt-3">
         <button class="btn btn-warning mr-5" type="submit">新增</button>
