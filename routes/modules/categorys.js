@@ -4,7 +4,7 @@ const Record = require('../../models/record')
 const getTotalAmount = require('../../public/javascripts/getTotalAmount')
 
 //類型選單
-router.get('/type/:category', (req, res) => {
+router.get('/:category', (req, res) => {
   const category = req.params.category
   Record.find()
     .lean()
