@@ -6,10 +6,14 @@ const methodOverride = require('method-override')
 const flash = require('connect-flash')
 
 const routes = require('./routes')
+const usePassport = require('./config/passport')
 require('./config/mongoose')
 
 const app = express()
 const PORT = process.env.PORT || 3000
+
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.set('view engine', 'hbs')
 
 app.use(session({
   secret: 'MySecret',
@@ -17,12 +21,11 @@ app.use(session({
   saveUninitialized: true
 }))
 
-app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
-app.set('view engine', 'hbs')
-
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
+
+usePassport(app)
 
 app.use(flash())
 app.use((req, res, next) => {
