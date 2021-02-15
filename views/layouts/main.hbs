@@ -14,13 +14,20 @@
 
 <body>
   {{!-- Navigation --}}
-  <nav class="navbar navbar-light bg-light justify-content-between">
+  <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/">
       <img src="https://www.flaticon.com/svg/static/icons/svg/2933/2933116.svg" width="30" height="30"
         class="d-inline-block align-top" alt="" loading="lazy">
       記帳小幫手
     </a>
-    <a href="/users/logout" class="btn btn-primary">登出</a>
+    {{#if isAuthenticated}}
+    <div class="justify-content-right">
+      <span class="mr-2" style="font-size: large;">{{user.name}} 您好</span>
+      <a href="/users/logout" class="btn btn-primary">登出</a>
+      {{else}}
+      <a href="/users/login" class="btn btn-warning">登入</a>
+      {{/if}}
+    </div>
   </nav>
 
   <main>
