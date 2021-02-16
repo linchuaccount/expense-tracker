@@ -26,6 +26,7 @@ router.get('/:id/edit', (req, res) => {
     .lean()
     .then((record) => {
       // console.log(record)
+      console.log(record.date)
       return res.render('edit', { record })
     })
     .catch(error => console.log(error))

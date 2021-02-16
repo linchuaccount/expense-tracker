@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
   Record.find({ userId: userId })
     .lean()
     .then(records => {
+      // console.log(records)
       const totalAmount = getTotalAmount(records)
       res.render('index', { records, totalAmount })
     })

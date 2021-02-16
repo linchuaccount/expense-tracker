@@ -11,22 +11,48 @@
       </div>
     </div>
     {{!-- 記帳小標題和分類下拉式清單 --}}
-    <div class="row mt-2 d-flex justify-content-between mb-2">
-      <h4 class="text-muted my-auto">
-        支出清單
-      </h4>
-      <button class="btn btn-light dropdown-toggle btn-lg" type="button" id="dropdownMenu2" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        分類 {{#if category}}: {{category}} {{/if}}
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <a href="/type/家居物業" class="dropdown-item">家居物業</a>
-        <a href="/type/交通出行" class="dropdown-item">交通出行</a>
-        <a href="/type/休閒娛樂" class="dropdown-item">休閒娛樂</a>
-        <a href="/type/餐飲食品" class="dropdown-item">餐飲食品</a>
-        <a href="/type/其他" class="dropdown-item">其他</a>
-        <a href="/" class="dropdown-item">預設</a>
+    <div class="row mt-2 d-flex justify-content-between">
+      <div class="col-4">
+        <h4 class="text-muted my-auto">
+          支出清單
+        </h4>
       </div>
+      {{!-- 改寫成表單資料 --}}
+      <div class="col-8">
+        <form action="/type" method="GET" class="d-flex justify-content-end">
+          {{!-- 類別分類 --}}
+          <div class="form-group">
+            <select name="category" id="category" class="form-control" aria-label="Default select example"
+              onchange="this.form.submit()">
+              <option value="所有分類" {{#ifEqual category "所有分類" }}selected{{/ifEqual}}>所有分類</option>
+              <option value="家居物業" {{#ifEqual category "家居物業" }}selected{{/ifEqual}}>家居物業</option>
+              <option value="交通出行" {{#ifEqual category "交通出行" }}selected{{/ifEqual}}>交通出行</option>
+              <option value="休閒娛樂" {{#ifEqual category "休閒娛樂" }}selected{{/ifEqual}}>休閒娛樂</option>
+              <option value="餐飲食品" {{#ifEqual category "餐飲食品" }}selected{{/ifEqual}}>餐飲食品</option>
+              <option value="其他" {{#ifEqual category "其他" }}selected{{/ifEqual}}>其他</option>
+            </select>
+          </div>
+          {{!-- 月份分類 --}}
+          <div class="form-group">
+            <select name="month" id="month" class="form-control" aria-label="Default select example"
+              onchange="this.form.submit()">
+              <option value="所有月份" {{#ifEqual month "所有月份" }}selected{{/ifEqual}}>所有月份</option>
+              <option value="1" {{#ifEqual month "1" }}selected{{/ifEqual}}>1月</option>
+              <option value="2" {{#ifEqual month "2" }}selected{{/ifEqual}}>2月</option>
+              <option value="3" {{#ifEqual month "3" }}selected{{/ifEqual}}>3月</option>
+              <option value="4" {{#ifEqual month "4" }}selected{{/ifEqual}}>4月</option>
+              <option value="5" {{#ifEqual month "5" }}selected{{/ifEqual}}>5月</option>
+              <option value="6" {{#ifEqual month "6" }}selected{{/ifEqual}}>6月</option>
+              <option value="7" {{#ifEqual month "7" }}selected{{/ifEqual}}>7月</option>
+              <option value="8" {{#ifEqual month "8" }}selected{{/ifEqual}}>8月</option>
+              <option value="9" {{#ifEqual month "9" }}selected{{/ifEqual}}>9月</option>
+              <option value="10" {{#ifEqual month "10" }}selected{{/ifEqual}}>10月</option>
+              <option value="11" {{#ifEqual month "11" }}selected{{/ifEqual}}>11月</option>
+              <option value="12" {{#ifEqual month "12" }}selected{{/ifEqual}}>12月</option>
+            </select>
+          </div>
+      </div>
+      </form>
     </div>
 
     {{!-- 記帳列表 --}}
