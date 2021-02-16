@@ -5,7 +5,8 @@ const getTotalAmount = require('../../public/javascripts/getTotalAmount')
 
 //記帳首頁(瀏覽所有記帳)
 router.get('/', (req, res) => {
-  Record.find()
+  const userId = req.user._id
+  Record.find({ userId: userId })
     .lean()
     .then(records => {
       const totalAmount = getTotalAmount(records)

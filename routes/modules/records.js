@@ -10,6 +10,7 @@ router.get('/new', (req, res) => {
 })
 //把新增記帳資料送進MongoDB儲存
 router.post('/', (req, res) => {
+  req.body.userId = req.user._id
   req.body.icon = getIcon(req.body.category)
   // console.log(req.body)
   Record.create(req.body)
@@ -19,17 +20,23 @@ router.post('/', (req, res) => {
 
 //進入記帳修改頁
 router.get('/:id/edit', (req, res) => {
-  const id = req.params.id
-  return Record.findById(id)
+  const userId = req.user._id
+  const _id = req.params.id
+  return Record.findOne({ _id, userId })
     .lean()
-    .then((record) => res.render('edit', { record }))
+    .then((record) => {
+      console.log(record)
+      return res.render('edit', { record })
+    }
+    )
     .catch(error => console.log(error))
 })
 //接住修改頁的資料後送進MongoDB儲存
 router.put('/:id', (req, res) => {
-  const id = req.params.id
+  const userId = req.user._id
+  const _id = req.params.id
   req.body.icon = getIcon(req.body.category)
-  return Record.findById(id)
+  return Record.findOne({ _id, userId })
     .then(records => {
       Object.assign(records, req.body)
       return records.save()
@@ -39,8 +46,9 @@ router.put('/:id', (req, res) => {
 })
 //刪除記帳資料
 router.delete('/:id', (req, res) => {
-  const id = req.params.id
-  return Record.findById(id)
+  const userId = req.user._id
+  const _id = req.params.id
+  return Record.findOne({ _id, userId })
     .then(record => record.remove())
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
