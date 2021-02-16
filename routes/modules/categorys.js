@@ -3,22 +3,6 @@ const router = express.Router()
 const Record = require('../../models/record')
 const getTotalAmount = require('../../public/javascripts/getTotalAmount')
 
-//類型選單
-// router.get('/', (req, res) => {
-//   let category = req.query.category
-//   let month = req.query.month
-//   const userId = req.user._id
-//   Record.find({ userId: userId })
-//     .lean()
-//     .then(records => records.filter(record => {
-//       return record.category.includes(category)
-//     }))
-//     .then(records => {
-//       const totalAmount = getTotalAmount(records)
-//       res.render('index', { records, totalAmount, category, month })
-//     })
-//     .catch(error => console.log(error))
-// })
 
 router.get('/', (req, res) => {
   let category = req.query.category
@@ -41,11 +25,12 @@ router.get('/', (req, res) => {
       } else {
         records = records.filter((record) => {
           let recordMonth = (new Date(record.date).getMonth() + 1).toString()
-          console.log(record.date)
-          console.log(new Date(record.date))
-          console.log(new Date(record.date).getMonth())
-          console.log(recordMonth)
-          return recordMonth.includes(month)
+          // console.log('===============')
+          // console.log(record.date)
+          // console.log(new Date(record.date))
+          // console.log(new Date(record.date).getMonth())
+          // console.log(recordMonth)
+          if (recordMonth === month) { return record }
         })
         // console.log('5', records)
       }

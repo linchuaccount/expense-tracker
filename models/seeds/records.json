@@ -4,27 +4,47 @@
     "category": "餐飲食品",
     "date": "2020-01-01",
     "amount": "55",
-    "icon": "fa-utensils"
+    "icon": "fa-utensils",
+    "merchant": "東東"
   },
   {
     "name": "搭火車",
     "category": "交通出行",
     "date": "2020-02-02",
     "amount": "150",
-    "icon": "fa-shuttle-van"
+    "icon": "fa-shuttle-van",
+    "merchant": "台鐵"
   },
   {
     "name": "看電影",
     "category": "休閒娛樂",
     "date": "2020-03-03",
     "amount": "300",
-    "icon": "fa-grin-beam"
+    "icon": "fa-grin-beam",
+    "merchant": "威秀"
   },
   {
     "name": "買衛生紙",
     "category": "家居物業",
     "date": "2020-04-04",
     "amount": "100",
-    "icon": "fa-home"
+    "icon": "fa-home",
+    "merchant": "全聯"
+  },
+  {
+    "name": "Switch",
+    "category": "休閒娛樂",
+    "date": "2020-12-31",
+    "amount": "9999",
+    "icon": "fa-grin-beam",
+    "merchant": "PCHOME"
+  },
+  {
+    "name": "泡麵",
+    "category": "家居物業",
+    "date": "2020-12-04",
+    "amount": "200",
+    "icon": "fa-home",
+    "merchant": "全家"
   }
 ]
