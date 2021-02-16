@@ -39,9 +39,14 @@ bcryptjs v2.4.3
 dotenv v8.2.0  
 nodemom  
 
-## Heroku URL
+## Heroku 連結
 
-`https://secure-lake-82803.herokuapp.com/`
+[https://secure-lake-82803.herokuapp.com/users/login](https://secure-lake-82803.herokuapp.com/users/login)  
+可用以下帳號密碼登入
+```
+email: user1@example  
+password: 12345678  
+```
 
 ## 記帳小幫手本地電腦安裝與執行方法
 
