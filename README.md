@@ -2,7 +2,9 @@
 
 簡單好操作的的記帳小幫手，無論是老爸、老媽都可以輕鬆使用
 
-![image](https://github.com/linchuaccount/expense-tracker/blob/master/expense-tracker.png)
+![image](https://github.com/linchuaccount/expense-tracker/blob/master/loginPage.png)
+![image](https://github.com/linchuaccount/expense-tracker/blob/master/registerPage.PNG)
+![image](https://github.com/linchuaccount/expense-tracker/blob/master/expense.PNG)
 
 ## 功能 Features
 
@@ -21,8 +23,7 @@
 
 ## 環境需求
 
-需在本地安裝 node.js  
-本專案使用node.js版本 v10.15.0  
+需在本地安裝 node.js (本專案使用node.js版本為 v10.15.0)  
 以下為專案使用的npm套件  
 express v4.17.1  
 express-handlebars v5.2.0  
@@ -58,7 +59,7 @@ nodemom
 6. 當終端機顯示`App is running on http://localhost:3000`，表示伺服器已成功啟動
 7. 在瀏覽器輸入網址`http://localhost:3000`，即可開始使用記帳小幫手
 
-8. 載入種子檔案
+8. 載入種子檔案  
   執行 `node models/seeds/categorySeeder.js`  
   可登入帳號(name: user2, email: user2@example.com, password: 12345678)  
   執行 `node models/seeds/recordSeeder.js`  
