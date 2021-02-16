@@ -31,6 +31,14 @@
           <option value="其他" {{#ifEqual record.category "其他" }}selected{{/ifEqual}}>其他</option>
         </select>
       </div>
+      {{!-- 店家 --}}
+      <div class="input-group mt-3 mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">店家</span>
+        </div>
+        <input type="text" placeholder="請輸入店家名稱" name="merchant" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default">
+      </div>
       {{!-- 金額 --}}
       <div class="input-group mb-3">
         <div class="input-group-prepend">

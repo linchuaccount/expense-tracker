@@ -25,10 +25,9 @@ router.get('/:id/edit', (req, res) => {
   return Record.findOne({ _id, userId })
     .lean()
     .then((record) => {
-      console.log(record)
+      // console.log(record)
       return res.render('edit', { record })
-    }
-    )
+    })
     .catch(error => console.log(error))
 })
 //接住修改頁的資料後送進MongoDB儲存
